@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<job>
+  <name>Collection Summary Data</name>
+    <description/>
+    <extended_description/>
+    <job_version/>
+    <job_status>0</job_status>
+  <directory>&#47;</directory>
+  <created_user>-</created_user>
+  <created_date>2011&#47;12&#47;27 16:26:45.284</created_date>
+  <modified_user>-</modified_user>
+  <modified_date>2011&#47;12&#47;27 16:26:45.284</modified_date>
+    <parameters>
+    </parameters>
+  <connection>
+    <name>caTissue</name>
+    <server>${CATISSUE_HOSTNAME}</server>
+    <type>MYSQL</type>
+    <access>Native</access>
+    <database>${CATISSUE_DBNAME}</database>
+    <port>3306</port>
+    <username>${CATISSUE_USERNAME}</username>
+    <password>${CATISSUE_PASSWORD}</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>3306</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>STREAM_RESULTS</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>N</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>CBM</name>
+    <server>${CBM_HOSTNAME}</server>
+    <type>MYSQL</type>
+    <access>Native</access>
+    <database>${CBM_DBNAME}</database>
+    <port>${CBM_PORT}</port>
+    <username>${CBM_USERNAME}</username>
+    <password>${CBM_PASSWORD}</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>${CBM_PORT}</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>STREAM_RESULTS</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>N</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
+    <slaveservers>
+    </slaveservers>
+  <logconnection/>
+  <logtable/>
+  <size_limit_lines/>
+   <use_batchid>Y</use_batchid>
+   <pass_batchid>N</pass_batchid>
+   <use_logfield>Y</use_logfield>
+   <shared_objects_file/>
+  <entries>
+    <entry>
+      <name>START</name>
+      <description>Special entries</description>
+      <type>SPECIAL</type>
+      <start>Y</start>
+      <dummy>N</dummy>
+      <repeat>N</repeat>
+      <schedulerType>0</schedulerType>
+      <intervalSeconds>0</intervalSeconds>
+      <intervalMinutes>60</intervalMinutes>
+      <hour>12</hour>
+      <minutes>0</minutes>
+      <weekDay>1</weekDay>
+      <DayOfMonth>1</DayOfMonth>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>202</xloc>
+      <yloc>37</yloc>
+      </entry>
+    <entry>
+      <name>Participant Collection Summary</name>
+      <description>Transformation</description>
+      <type>TRANS</type>
+      <filename>${Internal.Job.Filename.Directory}&#47;transformations&#47;participantCollectionSummary.ktr</filename>
+      <transname/>
+      <directory/>
+      <arg_from_previous>N</arg_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <clear_rows>N</clear_rows>
+      <clear_files>N</clear_files>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Nothing</loglevel>
+      <cluster>N</cluster>
+      <slave_server_name/>
+      <set_append_logfile>N</set_append_logfile>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>203</xloc>
+      <yloc>138</yloc>
+      </entry>
+    <entry>
+      <name>Specimen Collection Summary</name>
+      <description>Transformation</description>
+      <type>TRANS</type>
+      <filename>${Internal.Job.Filename.Directory}&#47;transformations&#47;specimen_collection_summary.ktr</filename>
+      <transname/>
+      <directory/>
+      <arg_from_previous>N</arg_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <clear_rows>N</clear_rows>
+      <clear_files>N</clear_files>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Nothing</loglevel>
+      <cluster>N</cluster>
+      <slave_server_name/>
+      <set_append_logfile>N</set_append_logfile>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>200</xloc>
+      <yloc>245</yloc>
+      </entry>
+    <entry>
+      <name>Abort job 1</name>
+      <description>Abort job</description>
+      <type>ABORT</type>
+      <message/>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>407</xloc>
+      <yloc>136</yloc>
+      </entry>
+    <entry>
+      <name>Abort job 2</name>
+      <description>Abort job</description>
+      <type>ABORT</type>
+      <message/>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>416</xloc>
+      <yloc>245</yloc>
+      </entry>
+    <entry>
+      <name>Success 1</name>
+      <description>Success</description>
+      <type>SUCCESS</type>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>411</xloc>
+      <yloc>335</yloc>
+      </entry>
+    <entry>
+      <name>Update Specimen Counts and Age Group</name>
+      <description>SQL</description>
+      <type>SQL</type>
+      <sql>UPDATE
+specimen_collection_summary AS bk,
+(
+ 
+SELECT   anatomic_source_id,
+specimen_type_id,
+is_collected_from,
+qualifiesPatientAgeAtSpecimenCollection ,
+id
+FROM (
+ 
+SELECT
+e.anatomic_source_id,
+e.specimen_type_id,
+e.is_collected_from,
+e.qualifiesPatientAgeAtSpecimenCollection,
+FIND_IN_SET(e.qualifiesPatientAgeAtSpecimenCollection, x.sallist) rank
+FROM
+specimen_collection_summary AS e,
+ 
+( SELECT anatomic_source_id,
+specimen_type_id,
+is_collected_from,
+GROUP_CONCAT(qualifiesPatientAgeAtSpecimenCollection ORDER BY qualifiesPatientAgeAtSpecimenCollection DESC) sallist
+FROM specimen_collection_summary
+GROUP BY anatomic_source_id,
+specimen_type_id,
+is_collected_from) AS X
+WHERE e.anatomic_source_id=x.anatomic_source_id
+AND e.specimen_type_id=x.specimen_type_id
+AND e.is_collected_from=x.is_collected_from) AS z, patient_age_group_at_collection pa
+WHERE z.qualifiesPatientAgeAtSpecimenCollection &gt;= pa.age_group_low AND z.qualifiesPatientAgeAtSpecimenCollection &lt;=age_group_high ) a1
+ 
+SET bk.patient_age_group_at_collection= a1.id
+WHERE bk.anatomic_source_id = a1.anatomic_source_id
+AND bk.specimen_type_id = a1.specimen_type_id
+AND bk.is_collected_from = a1.is_collected_from
+AND bk.qualifiesPatientAgeAtSpecimenCollection=a1.qualifiesPatientAgeAtSpecimenCollection;
+ 
+
+
+
+
+UPDATE specimen_collection_summary AS bk, (
+SELECT
+ anatomic_source_id,
+ specimen_type_id,
+ is_collected_from,
+patient_age_group_at_collection,
+SUM(specimen_count) AS SUM,
+COUNT(*)
+FROM specimen_collection_summary WHERE patient_age_group_at_collection IS NOT NULL
+GROUP BY anatomic_source_id, specimen_type_id, is_collected_from,patient_age_group_at_collection
+HAVING COUNT(*)&gt;1 ) AS a1
+SET bk.specimen_count=a1.sum
+WHERE bk.anatomic_source_id=a1.anatomic_source_id
+AND bk.specimen_type_id=a1.specimen_type_id
+AND bk.is_collected_from=a1.is_collected_from
+AND bk.patient_age_group_at_collection=a1.patient_age_group_at_collection
+AND bk.patient_age_group_at_collection IS NOT NULL;
+ 
+ 
+ 
+DELETE t3 FROM
+ (
+SELECT
+t1.specimen_collection_summary_ID,
+t1.anatomic_source_id,
+ t1.specimen_type_id,
+ t1.is_collected_from,
+t1.patient_age_group_at_collection
+FROM
+ (
+SELECT
+ anatomic_source_id,
+ specimen_type_id,
+ is_collected_from,
+patient_age_group_at_collection
+ FROM specimen_collection_summary
+GROUP BY
+  anatomic_source_id,
+ specimen_type_id,
+ is_collected_from,
+patient_age_group_at_collection 
+ HAVING COUNT(*)&gt;1) AS t0
+ INNER JOIN specimen_collection_summary t1 ON
+ t0.anatomic_source_id=t1.anatomic_source_id
+AND t0.specimen_type_id =t1.specimen_type_id
+AND t0.is_collected_from=t1.is_collected_from
+AND t0.patient_age_group_at_collection=t1.patient_age_group_at_collection ) AS t2
+ INNER JOIN  specimen_collection_summary t3 ON
+t3.anatomic_source_id=t2.anatomic_source_id
+AND t3.specimen_type_id =t2.specimen_type_id
+AND t3.is_collected_from=t2.is_collected_from
+AND t3.patient_age_group_at_collection=t2.patient_age_group_at_collection
+WHERE t2.specimen_collection_summary_ID &lt; t3.specimen_collection_summary_ID;</sql>
+      <useVariableSubstitution>F</useVariableSubstitution>
+      <sqlfromfile>F</sqlfromfile>
+      <sqlfilename/>
+      <connection>CBM</connection>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>200</xloc>
+      <yloc>341</yloc>
+      </entry>
+  </entries>
+  <hops>
+    <hop>
+      <from>START</from>
+      <to>Participant Collection Summary</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>Participant Collection Summary</from>
+      <to>Specimen Collection Summary</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Participant Collection Summary</from>
+      <to>Abort job 1</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Specimen Collection Summary</from>
+      <to>Abort job 2</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Specimen Collection Summary</from>
+      <to>Update Specimen Counts and Age Group</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Update Specimen Counts and Age Group</from>
+      <to>Success 1</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+  </hops>
+  <notepads>
+  </notepads>
+</job>
