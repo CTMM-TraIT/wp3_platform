@@ -94,7 +94,6 @@
       <type>TRANS</type>
       <filename>${Internal.Job.Filename.Directory}&#47;transformations&#47;participantCollectionSummary.ktr</filename>
       <transname/>
-      <directory/>
       <arg_from_previous>N</arg_from_previous>
       <exec_per_row>N</exec_per_row>
       <clear_rows>N</clear_rows>
@@ -123,7 +122,6 @@
       <type>TRANS</type>
       <filename>${Internal.Job.Filename.Directory}&#47;transformations&#47;specimen_collection_summary.ktr</filename>
       <transname/>
-      <directory/>
       <arg_from_previous>N</arg_from_previous>
       <exec_per_row>N</exec_per_row>
       <clear_rows>N</clear_rows>
@@ -277,7 +275,12 @@ t3.anatomic_source_id=t2.anatomic_source_id
 AND t3.specimen_type_id =t2.specimen_type_id
 AND t3.is_collected_from=t2.is_collected_from
 AND t3.patient_age_group_at_collection=t2.patient_age_group_at_collection
-WHERE t2.specimen_collection_summary_ID &lt; t3.specimen_collection_summary_ID;</sql>
+WHERE t2.specimen_collection_summary_ID &lt; t3.specimen_collection_summary_ID;
+
+UPDATE
+specimen_collection_summary
+SET qualifiesPatientAgeAtSpecimenCollection = patient_age_group_at_collection
+WHERE patient_age_group_at_collection IS NOT NULL;</sql>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>F</sqlfromfile>
       <sqlfilename/>
